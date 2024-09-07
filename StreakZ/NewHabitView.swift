@@ -9,6 +9,8 @@ import SwiftUI
 
 struct NewHabitView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.presentationMode) var presentationMode // Add this line
+
     @State private var habitName: String = ""
     @State private var selectedCategory: HabitCategory = .morning
     @State private var selectedFrequency: String = "Daily"
@@ -120,6 +122,7 @@ struct NewHabitView: View {
                     newHabit.category = selectedCategory.rawValue
                     do {
                         try viewContext.save()
+                        presentationMode.wrappedValue.dismiss()
                     } catch {
                         // Handle error
                     }
