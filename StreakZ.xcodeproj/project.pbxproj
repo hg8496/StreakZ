@@ -14,6 +14,12 @@
 		6B082A8F2C7E2DA6000F50DC /* StreakZTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B082A8E2C7E2DA6000F50DC /* StreakZTests.swift */; };
 		6B082A992C7E2DA6000F50DC /* StreakZUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B082A982C7E2DA6000F50DC /* StreakZUITests.swift */; };
 		6B082A9B2C7E2DA6000F50DC /* StreakZUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B082A9A2C7E2DA6000F50DC /* StreakZUITestsLaunchTests.swift */; };
+		6B082AA92C8A36DE000F50DC /* Habits.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B082AA72C8A36DE000F50DC /* Habits.xcdatamodeld */; };
+		6B0FB8AB2C8D06D8006DC83B /* Habit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FB8A92C8D06D8006DC83B /* Habit+CoreDataClass.swift */; };
+		6B0FB8AC2C8D06D8006DC83B /* Habit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FB8AA2C8D06D8006DC83B /* Habit+CoreDataProperties.swift */; };
+		6B9218062C8CECF7001568CF /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9218052C8CECF7001568CF /* Persistance.swift */; };
+		6B9218082C8CEFF0001568CF /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9218072C8CEFF0001568CF /* NewHabitView.swift */; };
+		6B92180A2C8CFAE8001568CF /* HabitCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9218092C8CFAE8001568CF /* HabitCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,12 @@
 		6B082A942C7E2DA6000F50DC /* StreakZUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreakZUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B082A982C7E2DA6000F50DC /* StreakZUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakZUITests.swift; sourceTree = "<group>"; };
 		6B082A9A2C7E2DA6000F50DC /* StreakZUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakZUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6B082AA82C8A36DE000F50DC /* Habits.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Habits.xcdatamodel; sourceTree = "<group>"; };
+		6B0FB8A92C8D06D8006DC83B /* Habit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6B0FB8AA2C8D06D8006DC83B /* Habit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6B9218052C8CECF7001568CF /* Persistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
+		6B9218072C8CEFF0001568CF /* NewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitView.swift; sourceTree = "<group>"; };
+		6B9218092C8CFAE8001568CF /* HabitCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +107,14 @@
 		6B082A7B2C7E2DA5000F50DC /* StreakZ */ = {
 			isa = PBXGroup;
 			children = (
+				6B0FB8A92C8D06D8006DC83B /* Habit+CoreDataClass.swift */,
+				6B0FB8AA2C8D06D8006DC83B /* Habit+CoreDataProperties.swift */,
+				6B9218092C8CFAE8001568CF /* HabitCategory.swift */,
+				6B9218072C8CEFF0001568CF /* NewHabitView.swift */,
+				6B9218052C8CECF7001568CF /* Persistance.swift */,
 				6B082A7C2C7E2DA5000F50DC /* StreakZApp.swift */,
 				6B082A7E2C7E2DA5000F50DC /* ContentView.swift */,
+				6B082AA72C8A36DE000F50DC /* Habits.xcdatamodeld */,
 				6B082A802C7E2DA6000F50DC /* Assets.xcassets */,
 				6B082A822C7E2DA6000F50DC /* StreakZ.entitlements */,
 				6B082A832C7E2DA6000F50DC /* Preview Content */,
@@ -260,7 +278,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B082A7F2C7E2DA5000F50DC /* ContentView.swift in Sources */,
+				6B9218062C8CECF7001568CF /* Persistance.swift in Sources */,
+				6B0FB8AB2C8D06D8006DC83B /* Habit+CoreDataClass.swift in Sources */,
+				6B0FB8AC2C8D06D8006DC83B /* Habit+CoreDataProperties.swift in Sources */,
 				6B082A7D2C7E2DA5000F50DC /* StreakZApp.swift in Sources */,
+				6B9218082C8CEFF0001568CF /* NewHabitView.swift in Sources */,
+				6B92180A2C8CFAE8001568CF /* HabitCategory.swift in Sources */,
+				6B082AA92C8A36DE000F50DC /* Habits.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +355,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -392,6 +417,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -419,6 +445,7 @@
 				CODE_SIGN_ENTITLEMENTS = StreakZ/StreakZ.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"StreakZ/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -455,6 +482,7 @@
 				CODE_SIGN_ENTITLEMENTS = StreakZ/StreakZ.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"StreakZ/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -490,6 +518,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -512,6 +541,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -533,6 +563,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -554,6 +585,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -609,6 +641,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6B082AA72C8A36DE000F50DC /* Habits.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6B082AA82C8A36DE000F50DC /* Habits.xcdatamodel */,
+			);
+			currentVersion = 6B082AA82C8A36DE000F50DC /* Habits.xcdatamodel */;
+			name = Habits.xcdatamodeld;
+			path = /Users/hg8496/Projects/xcode/StreakZ/StreakZ/Habits.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6B082A712C7E2DA5000F50DC /* Project object */;
 }
