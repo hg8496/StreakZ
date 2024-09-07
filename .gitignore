@@ -1,1 +1,70 @@
 .idea
+# Xcode
+#
+build/
+DerivedData/
+*.xcworkspace
+!default.xcworkspace
+xcuserdata/
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+# Swift Package Manager
+#
+.build/
+Packages/
+Package.pins
+Package.resolved
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+.swiftpm/xcode/package.xcworkspace/xcshareddata/
+
+# CocoaPods
+#
+Pods/
+Podfile.lock
+
+# Carthage
+#
+Carthage/Build/
+Carthage/Checkouts/
+Carthage/Packages/
+
+# Accio dependency management
+#
+Dependencies/
+.accio/
+
+# fastlane
+#
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Code Injection
+#
+iOSInjectionProject/
+
+# AppCode
+#
+.idea/
+
+# Playgrounds
+#
+timeline.xctimeline
+playground.xcworkspace
+
+# Other
+#
+*.DS_Store
+*.swp
+*.swm
+*.lock
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcshareddata/
+*.xcodeproj/xcshareddata/
+*.xcodeproj/xcuserdata/*/xcschemes/
+*.xcodeproj/xcuserdata/*/xcschemes/xcschememanagement.plist
