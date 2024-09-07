@@ -58,6 +58,7 @@ struct ContentView: View {
         }
     }
 
+    @ViewBuilder
     func categoryHeader(title: String, imageName: String) -> some View {
         HStack {
             Image(imageName)
@@ -73,6 +74,7 @@ struct ContentView: View {
         .overlay(Divider().background(Color.white), alignment: .bottom)
     }
 
+    @ViewBuilder
     func habitRow(habit: Habit) -> some View {
         HStack {
             Text(habit.name ?? "")
