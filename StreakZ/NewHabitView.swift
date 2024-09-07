@@ -138,7 +138,7 @@ struct NewHabitView: View {
         .padding()
         .background(
             LinearGradient(
-                gradient: Gradient(colors: [Color("#031015"), Color("#29373B")]),
+                gradient: Gradient(colors: [Color(rgb: 0x031015), Color(rgb: 0x29373B)]),
                 startPoint: .leading,
                 endPoint: .trailing
             )
