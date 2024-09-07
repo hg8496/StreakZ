@@ -15,9 +15,9 @@ struct ContentView: View {
             ZStack {
                 VStack(alignment: .leading, spacing: 10) {
                     ForEach(HabitCategory.allCases) { category in
-                        Section(header: categoryHeader(title: category.rawValue, imageName: category.rawValue.lowercased()+"Icon")) {
+                        Section(header: CategoryHeader(title: category.rawValue, imageName: category.rawValue.lowercased()+"Icon")) {
                             ForEach(habits.filter { $0.habitCategory == category }) { habit in
-                                habitRow(habit: habit)
+                                HabitRow(habit: habit)
                             }
                             Spacer(minLength: 10)
                         }
@@ -56,52 +56,6 @@ struct ContentView: View {
             .navigationBarHidden(true)
             #endif
         }
-    }
-
-    @ViewBuilder
-    func categoryHeader(title: String, imageName: String) -> some View {
-        HStack {
-            Image(imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 24, height: 24)
-            Text(title)
-                .font(.headline)
-                .foregroundColor(.white)
-            Spacer()
-        }
-        .padding(.bottom, 5)
-        .overlay(Divider().background(Color.white), alignment: .bottom)
-    }
-
-    @ViewBuilder
-    func habitRow(habit: Habit) -> some View {
-        HStack {
-            Text(habit.name ?? "")
-                .font(.body)
-                .foregroundColor(.white)
-            Spacer()
-            Text(habit.streak.formatted())
-                .font(.body)
-                .foregroundColor(.green)
-            Button(action: {
-                habit.isCompleted.toggle()
-                do {
-                    try viewContext.save()
-                } catch {
-                    // Handle error
-                }
-            }) {
-                Image(systemName: habit.isCompleted ? "checkmark.square.fill" : "square")
-                    .foregroundColor(habit.isCompleted ? .green : .white)
-                    .font(.title2)
-            }
-        }
-        .padding(.vertical, 5)
-        .padding(.horizontal)
-        .frame(height: 40)
-        .background(Color.gray.opacity(0.2))
-        .cornerRadius(10)
     }
 }
 
