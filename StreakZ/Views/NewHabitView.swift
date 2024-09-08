@@ -50,7 +50,7 @@ struct NewHabitView: View {
             .pickerStyle(SegmentedPickerStyle())
             .background(Color.gray.opacity(0.2))
             .cornerRadius(5)
-            .onChange(of: selectedFrequency) { newValue in
+            .onChange(of: selectedFrequency) { newValue, _ in
                 goalPeriod = viewModel.updateGoalPeriod(for: newValue)
             }
 
@@ -65,7 +65,6 @@ struct NewHabitView: View {
             .pickerStyle(MenuPickerStyle())
             .background(Color.white)
             .cornerRadius(5)
-            .padding(.horizontal)
 
             Text("Start Date")
                 .foregroundColor(.white)
@@ -73,32 +72,38 @@ struct NewHabitView: View {
 
             DatePicker("Start Date", selection: $startDate, displayedComponents: .date)
                 .datePickerStyle(CompactDatePickerStyle())
-                .padding()
-                .background(Color.white)
-                .cornerRadius(5)
-                .padding(.horizontal)
+                .background(Color.white.opacity(0.1))
+                .cornerRadius(10)
+                .shadow(radius: 5)
 
+            Text("Goal")
+                .foregroundColor(.white)
+                .font(.headline)
             HStack {
-                Text("Goal")
-                    .foregroundColor(.white)
-                    .font(.headline)
 
                 Stepper(value: $goalAmount, in: 1...100) {
-                    Text("goalAmount")
-                        .foregroundColor(.white)
+                    HStack {
+                        Text(LocalizedStringKey("goalAmount"))
+                            .foregroundColor(.white)
+                        Text(goalAmount.formatted())
+                            .foregroundColor(.white)
+                    }
                 }
-                .padding()
-                .background(Color.white)
-                .cornerRadius(5)
-
+                //.padding()
+                .background(Color.white.opacity(0.1))
+                .cornerRadius(10)
+                .shadow(radius: 5)
+                Text(LocalizedStringKey("Per"))
+                    .foregroundColor(.white)
                 Picker("Per", selection: $goalPeriod) {
                     ForEach(GoalPeriod.allCases) { period in
                         Text(LocalizedStringKey(period.rawValue.lowercased())).tag(period)
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
-                .background(Color.white)
-                .cornerRadius(5)
+                .background(Color.white.opacity(0.1))
+                .cornerRadius(10)
+                .shadow(radius: 5)
                 .padding(.horizontal)
             }
 
@@ -112,6 +117,7 @@ struct NewHabitView: View {
                         .padding()
                         .background(Color.red)
                         .cornerRadius(10)
+                        .shadow(radius: 5)
                 }
 
                 Spacer()
@@ -125,6 +131,7 @@ struct NewHabitView: View {
                         .padding()
                         .background(Color.green)
                         .cornerRadius(10)
+                        .shadow(radius: 5)
                 }
             }
             .padding(.top, 20)
