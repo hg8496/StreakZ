@@ -50,7 +50,7 @@ struct NewHabitView: View {
             .pickerStyle(SegmentedPickerStyle())
             .background(Color.gray.opacity(0.2))
             .cornerRadius(5)
-            .onChange(of: selectedFrequency) { newValue, _ in
+            .onChange(of: selectedFrequency) { _, newValue in
                 goalPeriod = viewModel.updateGoalPeriod(for: newValue)
             }
 
