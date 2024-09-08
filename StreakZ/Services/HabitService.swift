@@ -20,13 +20,17 @@ class HabitService {
         }
     }
 
-    func addHabit(name: String, category: HabitCategory, startDate: Date, frequency: String, reminder: String, goalAmount: Int, goalPeriod: String) {
+    func addHabit(name: String, category: HabitCategory, startDate: Date, frequency: Frequency, reminder: String, goalAmount: Int, goalPeriod: GoalPeriod) {
         let newHabit = Habit(context: context)
         newHabit.name = name
         newHabit.creationDate = startDate
         newHabit.isCompleted = false
         newHabit.streak = 0
         newHabit.habitCategory = category
+        newHabit.habitFrequency = frequency
+        newHabit.reminder = reminder
+        newHabit.goalAmount = Int32(goalAmount)
+        newHabit.habitGoalPeriod = goalPeriod
 
         saveContext()
     }

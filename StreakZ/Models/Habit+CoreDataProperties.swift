@@ -21,6 +21,10 @@ extension Habit {
     @NSManaged public var isCompleted: Bool
     @NSManaged public var name: String?
     @NSManaged public var streak: Int32
+    @NSManaged public var frequency: String?
+    @NSManaged public var reminder: String?
+    @NSManaged public var goalAmount: Int32
+    @NSManaged public var goalPeriod: String?
 
     var habitCategory: HabitCategory {
         get {
@@ -28,6 +32,24 @@ extension Habit {
         }
         set {
             category = newValue.rawValue
+        }
+    }
+
+    var habitFrequency: Frequency {
+        get {
+            Frequency(rawValue: frequency ?? "") ?? .daily
+        }
+        set {
+            frequency = newValue.rawValue
+        }
+    }
+
+    var habitGoalPeriod: GoalPeriod {
+        get {
+            GoalPeriod(rawValue: goalPeriod ?? "") ?? .day
+        }
+        set {
+            goalPeriod = newValue.rawValue
         }
     }
 }

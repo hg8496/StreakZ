@@ -1,7 +1,7 @@
 enum HabitCategory: String, CaseIterable, Identifiable {
-    case morning = "Morning"
-    case noon = "Noon"
-    case evening = "Evening"
+    case morning = "morning"
+    case noon = "noon"
+    case evening = "evening"
 
     var id: String { self.rawValue }
 }

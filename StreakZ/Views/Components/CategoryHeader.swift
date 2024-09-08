@@ -22,7 +22,7 @@ struct CategoryHeader: View {
 
 struct CategoryHeader_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryHeader(title: "Morning", imageName: "morningIcon")
+        CategoryHeader(title: "morning", imageName: "morningIcon")
             .background(Color.black)
             .previewLayout(.sizeThatFits)
     }

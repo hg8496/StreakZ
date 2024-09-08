@@ -12,11 +12,11 @@ struct NewHabitView: View {
     @EnvironmentObject var viewModel: HabitViewModel
     @State private var habitName: String = ""
     @State private var selectedCategory: HabitCategory = .morning
-    @State private var selectedFrequency: String = "Daily"
+    @State private var selectedFrequency: Frequency = .daily
     @State private var reminder: String = "No"
     @State private var startDate: Date = Date()
     @State private var goalAmount: Int = 1
-    @State private var goalPeriod: String = "Month"
+    @State private var goalPeriod: GoalPeriod = .day
 
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -43,13 +43,16 @@ struct NewHabitView: View {
                 .font(.headline)
 
             Picker("Frequency", selection: $selectedFrequency) {
-                Text("Daily").tag("Daily")
-                Text("Weekly").tag("Weekly")
-                Text("Monthly").tag("Monthly")
+                ForEach(Frequency.allCases) { frequency in
+                    Text(LocalizedStringKey(frequency.rawValue.lowercased())).tag(frequency)
+                }
             }
             .pickerStyle(SegmentedPickerStyle())
             .background(Color.gray.opacity(0.2))
             .cornerRadius(5)
+            .onChange(of: selectedFrequency) { newValue in
+                goalPeriod = viewModel.updateGoalPeriod(for: newValue)
+            }
 
             Text("Reminder")
                 .foregroundColor(.white)
@@ -81,7 +84,7 @@ struct NewHabitView: View {
                     .font(.headline)
 
                 Stepper(value: $goalAmount, in: 1...100) {
-                    Text("(goalAmount)")
+                    Text("goalAmount")
                         .foregroundColor(.white)
                 }
                 .padding()
@@ -89,9 +92,9 @@ struct NewHabitView: View {
                 .cornerRadius(5)
 
                 Picker("Per", selection: $goalPeriod) {
-                    Text("Day").tag("Day")
-                    Text("Week").tag("Week")
-                    Text("Month").tag("Month")
+                    ForEach(GoalPeriod.allCases) { period in
+                        Text(LocalizedStringKey(period.rawValue.lowercased())).tag(period)
+                    }
                 }
                 .pickerStyle(MenuPickerStyle())
                 .background(Color.white)
