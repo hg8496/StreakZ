@@ -22,6 +22,7 @@
 		6B0FB8B62C8D1443006DC83B /* HabitRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FB8B52C8D1443006DC83B /* HabitRow.swift */; };
 		6B0FB8B92C8DA377006DC83B /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FB8B82C8DA377006DC83B /* HabitViewModel.swift */; };
 		6B0FB8BC2C8DA3B2006DC83B /* HabitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FB8BB2C8DA3B2006DC83B /* HabitService.swift */; };
+		6B0FB8BE2C8DB9FA006DC83B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 6B0FB8BD2C8DB9FA006DC83B /* Localizable.xcstrings */; };
 		6B9218062C8CECF7001568CF /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9218052C8CECF7001568CF /* Persistance.swift */; };
 		6B9218082C8CEFF0001568CF /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9218072C8CEFF0001568CF /* NewHabitView.swift */; };
 		6B92180A2C8CFAE8001568CF /* HabitCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9218092C8CFAE8001568CF /* HabitCategory.swift */; };
@@ -64,6 +65,7 @@
 		6B0FB8B52C8D1443006DC83B /* HabitRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRow.swift; sourceTree = "<group>"; };
 		6B0FB8B82C8DA377006DC83B /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
 		6B0FB8BB2C8DA3B2006DC83B /* HabitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitService.swift; sourceTree = "<group>"; };
+		6B0FB8BD2C8DB9FA006DC83B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		6B9218052C8CECF7001568CF /* Persistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		6B9218072C8CEFF0001568CF /* NewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitView.swift; sourceTree = "<group>"; };
 		6B9218092C8CFAE8001568CF /* HabitCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCategory.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		6B082A702C7E2DA5000F50DC = {
 			isa = PBXGroup;
 			children = (
+				6B0FB8BD2C8DB9FA006DC83B /* Localizable.xcstrings */,
 				6B082A7B2C7E2DA5000F50DC /* StreakZ */,
 				6B082A8D2C7E2DA6000F50DC /* StreakZTests */,
 				6B082A972C7E2DA6000F50DC /* StreakZUITests */,
@@ -296,6 +299,8 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				es,
 			);
 			mainGroup = 6B082A702C7E2DA5000F50DC;
 			productRefGroup = 6B082A7A2C7E2DA5000F50DC /* Products */;
@@ -316,6 +321,7 @@
 			files = (
 				6B082A852C7E2DA6000F50DC /* Preview Assets.xcassets in Resources */,
 				6B082A812C7E2DA6000F50DC /* Assets.xcassets in Resources */,
+				6B0FB8BE2C8DB9FA006DC83B /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

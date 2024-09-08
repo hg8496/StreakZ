@@ -1,0 +1,165 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "(goalAmount)" : {
+
+    },
+    "add_habit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gewohnheit hinzufügen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Habit"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir Hábito"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "Category" : {
+
+    },
+    "Daily" : {
+
+    },
+    "Day" : {
+
+    },
+    "Enter Habit Name" : {
+
+    },
+    "evening" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abensd"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Evening"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noche"
+          }
+        }
+      }
+    },
+    "Frequency" : {
+
+    },
+    "Goal" : {
+
+    },
+    "Month" : {
+
+    },
+    "Monthly" : {
+
+    },
+    "morning" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Morgens"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Morning"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mañana"
+          }
+        }
+      }
+    },
+    "Morning" : {
+
+    },
+    "No" : {
+
+    },
+    "noon" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mittags"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noon"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mediodía"
+          }
+        }
+      }
+    },
+    "Per" : {
+
+    },
+    "Reminder" : {
+
+    },
+    "Start Date" : {
+
+    },
+    "Week" : {
+
+    },
+    "Weekly" : {
+
+    },
+    "Yes" : {
+
+    }
+  },
+  "version" : "1.0"
+}

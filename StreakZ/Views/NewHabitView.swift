@@ -31,7 +31,7 @@ struct NewHabitView: View {
 
             Picker("Category", selection: $selectedCategory) {
                 ForEach(HabitCategory.allCases) { category in
-                    Text(category.rawValue).tag(category)
+                    Text(LocalizedStringKey(category.rawValue.lowercased())).tag(category)
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
@@ -117,7 +117,7 @@ struct NewHabitView: View {
                     viewModel.addHabit(name: habitName, category: selectedCategory, startDate: startDate, frequency: selectedFrequency, reminder: reminder, goalAmount: goalAmount, goalPeriod: goalPeriod)
                     presentationMode.wrappedValue.dismiss()
                 }) {
-                    Text("Create Habit")
+                    Text("add_habit")
                         .foregroundColor(.white)
                         .padding()
                         .background(Color.green)

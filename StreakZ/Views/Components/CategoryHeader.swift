@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CategoryHeader: View {
-    let title: String
+    let title: LocalizedStringKey
     let imageName: String
 
     var body: some View {

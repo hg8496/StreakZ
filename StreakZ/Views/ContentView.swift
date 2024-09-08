@@ -14,7 +14,7 @@ struct ContentView: View {
                     ScrollView {
                         LazyVStack(alignment: .leading, spacing: 10) {
                             ForEach(HabitCategory.allCases) { category in
-                                Section(header: CategoryHeader(title: category.rawValue,
+                                Section(header: CategoryHeader(title: LocalizedStringKey(category.rawValue.lowercased()),
                                 imageName: "\(category.rawValue.lowercased())Icon")) {
                                     ForEach(viewModel.habits.filter { $0.habitCategory == category }) { habit in
                                         HabitRow(habit: habit)
@@ -48,6 +48,8 @@ struct ContentView: View {
                             Image(systemName: "plus")
                                 .resizable()
                                 .frame(width: 24, height: 24)
+                                .foregroundColor(.white)
+                            Text(LocalizedStringKey("add_habit"))
                                 .foregroundColor(.white)
                         }
                         .padding(.leading, 30)
