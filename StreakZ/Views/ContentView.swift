@@ -14,7 +14,8 @@ struct ContentView: View {
                     ScrollView {
                         LazyVStack(alignment: .leading, spacing: 10) {
                             ForEach(HabitCategory.allCases) { category in
-                                Section(header: CategoryHeader(title: category.rawValue, imageName: category.rawValue.lowercased() + "Icon")) {
+                                Section(header: CategoryHeader(title: category.rawValue,
+                                imageName: "\(category.rawValue.lowercased())Icon")) {
                                     ForEach(viewModel.habits.filter { $0.habitCategory == category }) { habit in
                                         HabitRow(habit: habit)
                                     }

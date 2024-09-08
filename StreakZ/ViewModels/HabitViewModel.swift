@@ -1,51 +1,29 @@
 import Foundation
-import CoreData
 import Combine
+import CoreData
 
 class HabitViewModel: ObservableObject {
     @Published var habits: [Habit] = []
     private var cancellables: Set<AnyCancellable> = []
 
-    private let context: NSManagedObjectContext
+    private let habitService: HabitService
 
     init(context: NSManagedObjectContext) {
-        self.context = context
+        self.habitService = HabitService(context: context)
         fetchHabits()
     }
 
     func fetchHabits() {
-        let request: NSFetchRequest<Habit> = Habit.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(keyPath: \Habit.creationDate, ascending: true)]
-
-        do {
-            habits = try context.fetch(request)
-        } catch {
-            print("Failed to fetch habits: (error)")
-        }
+        habits = habitService.fetchHabits()
     }
 
     func addHabit(name: String, category: HabitCategory, startDate: Date, frequency: String, reminder: String, goalAmount: Int, goalPeriod: String) {
-        let newHabit = Habit(context: context)
-        newHabit.name = name
-        newHabit.creationDate = startDate
-        newHabit.isCompleted = false
-        newHabit.streak = 0
-        newHabit.habitCategory = category
-
-        saveContext()
+        habitService.addHabit(name: name, category: category, startDate: startDate, frequency: frequency, reminder: reminder, goalAmount: goalAmount, goalPeriod: goalPeriod)
+        fetchHabits()
     }
 
     func toggleCompletion(for habit: Habit) {
-        habit.isCompleted.toggle()
-        saveContext()
-    }
-
-    private func saveContext() {
-        do {
-            try context.save()
-            fetchHabits()
-        } catch {
-            print("Failed to save context: (error)")
-        }
+        habitService.toggleCompletion(for: habit)
+        fetchHabits()
     }
 }
