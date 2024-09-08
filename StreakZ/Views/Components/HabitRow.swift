@@ -2,8 +2,8 @@ import SwiftUI
 import CoreData
 
 struct HabitRow: View {
-    @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var habit: Habit
+    @EnvironmentObject var viewModel: HabitViewModel
 
     var body: some View {
         HStack {
@@ -15,12 +15,7 @@ struct HabitRow: View {
                 .font(.body)
                 .foregroundColor(.green)
             Button(action: {
-                habit.isCompleted.toggle()
-                do {
-                    try viewContext.save()
-                } catch {
-                    // Handle error
-                }
+                viewModel.toggleCompletion(for: habit)
             }) {
                 Image(systemName: habit.isCompleted ? "checkmark.square.fill" : "square")
                     .foregroundColor(habit.isCompleted ? .green : .white)
@@ -45,6 +40,7 @@ struct HabitRow_Previews: PreviewProvider {
 
         return HabitRow(habit: habit)
             .environment(\.managedObjectContext, context)
+            .environmentObject(HabitViewModel(context: context))
             .background(Color.black)
             .previewLayout(.sizeThatFits)
     }

@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct NewHabitView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    @Environment(\.presentationMode) var presentationMode // Add this line
-
+    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var viewModel: HabitViewModel
     @State private var habitName: String = ""
     @State private var selectedCategory: HabitCategory = .morning
     @State private var selectedFrequency: String = "Daily"
@@ -103,6 +102,7 @@ struct NewHabitView: View {
             HStack {
                 Button(action: {
                     // Cancel action
+                    presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Cancel")
                         .foregroundColor(.white)
@@ -114,18 +114,8 @@ struct NewHabitView: View {
                 Spacer()
 
                 Button(action: {
-                    let newHabit = Habit(context: viewContext)
-                    newHabit.name = habitName
-                    newHabit.creationDate = startDate
-                    newHabit.isCompleted = false
-                    newHabit.streak = 0
-                    newHabit.category = selectedCategory.rawValue
-                    do {
-                        try viewContext.save()
-                        presentationMode.wrappedValue.dismiss()
-                    } catch {
-                        // Handle error
-                    }
+                    viewModel.addHabit(name: habitName, category: selectedCategory, startDate: startDate, frequency: selectedFrequency, reminder: reminder, goalAmount: goalAmount, goalPeriod: goalPeriod)
+                    presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Create Habit")
                         .foregroundColor(.white)
@@ -147,8 +137,14 @@ struct NewHabitView: View {
             )
             .edgesIgnoringSafeArea(.all)
         )
-    }}
+    }
+}
 
-#Preview {
-    NewHabitView()
+struct NewHabitView_Previews: PreviewProvider {
+    static var previews: some View {
+        let context = PersistenceController.preview.container.viewContext
+        return NewHabitView()
+            .environment(\.managedObjectContext, context)
+            .environmentObject(HabitViewModel(context: context))
+    }
 }
