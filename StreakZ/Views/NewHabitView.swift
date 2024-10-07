@@ -20,67 +20,46 @@ struct NewHabitView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            TextField("Enter Habit Name", text: $habitName)
-                .padding()
-                .background(Color.white)
-                .cornerRadius(5)
+            TextField(LocalizedStringKey("enter_habit_name"), text: $habitName)
 
-            Text("Category")
+            Text(LocalizedStringKey("category"))
                 .foregroundColor(.white)
                 .font(.headline)
 
-            Picker("Category", selection: $selectedCategory) {
+            Picker(LocalizedStringKey("category"), selection: $selectedCategory) {
                 ForEach(HabitCategory.allCases) { category in
                     Text(LocalizedStringKey(category.rawValue.lowercased())).tag(category)
                 }
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .background(Color.gray.opacity(0.2))
-            .cornerRadius(5)
 
-            Text("Frequency")
+            Text(LocalizedStringKey("frequency"))
                 .foregroundColor(.white)
                 .font(.headline)
 
-            Picker("Frequency", selection: $selectedFrequency) {
+            Picker(LocalizedStringKey("frequency"), selection: $selectedFrequency) {
                 ForEach(Frequency.allCases) { frequency in
                     Text(LocalizedStringKey(frequency.rawValue.lowercased())).tag(frequency)
                 }
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .background(Color.gray.opacity(0.2))
-            .cornerRadius(5)
-            .onChange(of: selectedFrequency) { _, newValue in
-                goalPeriod = viewModel.updateGoalPeriod(for: newValue)
+
+            Text(LocalizedStringKey("reminder"))
+                .foregroundColor(.white)
+                .font(.headline)
+
+            Picker(LocalizedStringKey("reminder"), selection: $reminder) {
+                Text("no").tag("No")
+                Text("yes").tag("Yes")
             }
 
-            Text("Reminder")
+            Text(LocalizedStringKey("start_date"))
                 .foregroundColor(.white)
                 .font(.headline)
 
-            Picker("Reminder", selection: $reminder) {
-                Text("No").tag("No")
-                Text("Yes").tag("Yes")
-            }
-            .pickerStyle(MenuPickerStyle())
-            .background(Color.white)
-            .cornerRadius(5)
-
-            Text("Start Date")
+            Text(LocalizedStringKey("goal"))
                 .foregroundColor(.white)
                 .font(.headline)
 
-            DatePicker("Start Date", selection: $startDate, displayedComponents: .date)
-                .datePickerStyle(CompactDatePickerStyle())
-                .background(Color.white.opacity(0.1))
-                .cornerRadius(10)
-                .shadow(radius: 5)
-
-            Text("Goal")
-                .foregroundColor(.white)
-                .font(.headline)
             HStack {
-
                 Stepper(value: $goalAmount, in: 1...100) {
                     HStack {
                         Text(LocalizedStringKey("goalAmount"))
@@ -89,50 +68,38 @@ struct NewHabitView: View {
                             .foregroundColor(.white)
                     }
                 }
-                //.padding()
-                .background(Color.white.opacity(0.1))
-                .cornerRadius(10)
-                .shadow(radius: 5)
-                Text(LocalizedStringKey("Per"))
+                
+                Text(LocalizedStringKey("per"))
                     .foregroundColor(.white)
-                Picker("Per", selection: $goalPeriod) {
+
+                Picker(LocalizedStringKey("per"), selection: $goalPeriod) {
                     ForEach(GoalPeriod.allCases) { period in
                         Text(LocalizedStringKey(period.rawValue.lowercased())).tag(period)
                     }
                 }
-                .pickerStyle(MenuPickerStyle())
-                .background(Color.white.opacity(0.1))
-                .cornerRadius(10)
-                .shadow(radius: 5)
-                .padding(.horizontal)
             }
 
-            HStack {
-                Button(action: {
-                    // Cancel action
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Cancel")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.red)
-                        .cornerRadius(10)
-                        .shadow(radius: 5)
-                }
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Text(LocalizedStringKey("cancel"))
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.red)
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
+            }
 
-                Spacer()
-
-                Button(action: {
-                    viewModel.addHabit(name: habitName, category: selectedCategory, startDate: startDate, frequency: selectedFrequency, reminder: reminder, goalAmount: goalAmount, goalPeriod: goalPeriod)
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("add_habit")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.green)
-                        .cornerRadius(10)
-                        .shadow(radius: 5)
-                }
+            Button(action: {
+                viewModel.addHabit(name: habitName, category: selectedCategory, startDate: startDate, frequency: selectedFrequency, reminder: reminder, goalAmount: goalAmount, goalPeriod: goalPeriod)
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Text(LocalizedStringKey("add_habit"))
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.green)
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
             }
             .padding(.top, 20)
 

@@ -24,7 +24,7 @@
         }
       }
     },
-    "Cancel" : {
+    "cancel" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -46,12 +46,18 @@
         }
       }
     },
-    "Category" : {
+    "category" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kategorie"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Category"
           }
         },
         "es" : {
@@ -108,12 +114,18 @@
         }
       }
     },
-    "Enter Habit Name" : {
+    "enter_habit_name" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gewohnheitsname eingeben"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter Habit Name"
           }
         },
         "es" : {
@@ -147,12 +159,18 @@
         }
       }
     },
-    "Frequency" : {
+    "frequency" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Häufigkeit"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frequency"
           }
         },
         "es" : {
@@ -163,12 +181,18 @@
         }
       }
     },
-    "Goal" : {
+    "goal" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ziel"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Goal"
           }
         },
         "es" : {
@@ -270,6 +294,28 @@
         }
       }
     },
+    "no" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nein"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No"
+          }
+        }
+      }
+    },
     "No" : {
       "localizations" : {
         "de" : {
@@ -309,12 +355,18 @@
         }
       }
     },
-    "Per" : {
+    "per" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "pro"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per"
           }
         },
         "es" : {
@@ -325,12 +377,18 @@
         }
       }
     },
-    "Reminder" : {
+    "reminder" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erinnerung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reminder"
           }
         },
         "es" : {
@@ -341,12 +399,18 @@
         }
       }
     },
-    "Start Date" : {
+    "start_date" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Startdatum"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start Date"
           }
         },
         "es" : {
@@ -399,6 +463,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Semanal"
+          }
+        }
+      }
+    },
+    "yes" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ja"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sí"
           }
         }
       }
