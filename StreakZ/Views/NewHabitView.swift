@@ -17,48 +17,48 @@ struct NewHabitView: View {
     @State private var startDate: Date = Date()
     @State private var goalAmount: Int = 1
     @State private var goalPeriod: GoalPeriod = .day
-
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             TextField(LocalizedStringKey("enter_habit_name"), text: $habitName)
-
+                .foregroundColor(.white)
             Text(LocalizedStringKey("category"))
                 .foregroundColor(.white)
                 .font(.headline)
-
+            
             Picker(LocalizedStringKey("category"), selection: $selectedCategory) {
                 ForEach(HabitCategory.allCases) { category in
                     Text(LocalizedStringKey(category.rawValue.lowercased())).tag(category)
                 }
             }
-
+            
             Text(LocalizedStringKey("frequency"))
                 .foregroundColor(.white)
                 .font(.headline)
-
+            
             Picker(LocalizedStringKey("frequency"), selection: $selectedFrequency) {
                 ForEach(Frequency.allCases) { frequency in
                     Text(LocalizedStringKey(frequency.rawValue.lowercased())).tag(frequency)
                 }
             }
-
+            
             Text(LocalizedStringKey("reminder"))
                 .foregroundColor(.white)
                 .font(.headline)
-
+            
             Picker(LocalizedStringKey("reminder"), selection: $reminder) {
                 Text("no").tag("No")
                 Text("yes").tag("Yes")
             }
-
+            
             Text(LocalizedStringKey("start_date"))
                 .foregroundColor(.white)
                 .font(.headline)
-
+            
             Text(LocalizedStringKey("goal"))
                 .foregroundColor(.white)
                 .font(.headline)
-
+            
             HStack {
                 Stepper(value: $goalAmount, in: 1...100) {
                     HStack {
@@ -71,14 +71,14 @@ struct NewHabitView: View {
                 
                 Text(LocalizedStringKey("per"))
                     .foregroundColor(.white)
-
+                
                 Picker(LocalizedStringKey("per"), selection: $goalPeriod) {
                     ForEach(GoalPeriod.allCases) { period in
                         Text(LocalizedStringKey(period.rawValue.lowercased())).tag(period)
                     }
                 }
             }
-
+            
             Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }) {
@@ -89,7 +89,7 @@ struct NewHabitView: View {
                     .cornerRadius(10)
                     .shadow(radius: 5)
             }
-
+            
             Button(action: {
                 viewModel.addHabit(name: habitName, category: selectedCategory, startDate: startDate, frequency: selectedFrequency, reminder: reminder, goalAmount: goalAmount, goalPeriod: goalPeriod)
                 presentationMode.wrappedValue.dismiss()
@@ -102,7 +102,7 @@ struct NewHabitView: View {
                     .shadow(radius: 5)
             }
             .padding(.top, 20)
-
+            
             Spacer()
         }
         .padding()

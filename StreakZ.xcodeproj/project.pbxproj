@@ -25,6 +25,10 @@
 		6B0FB8BE2C8DB9FA006DC83B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 6B0FB8BD2C8DB9FA006DC83B /* Localizable.xcstrings */; };
 		6B0FB8C02C8E0D5A006DC83B /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FB8BF2C8E0D5A006DC83B /* Frequency.swift */; };
 		6B0FB8C22C8E0D8E006DC83B /* GoalPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0FB8C12C8E0D8E006DC83B /* GoalPeriod.swift */; };
+		6B4EAE792CB44D21004978FC /* HabitCompletion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4EAE772CB44D21004978FC /* HabitCompletion+CoreDataProperties.swift */; };
+		6B4EAE7A2CB44D21004978FC /* HabitCompletion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4EAE762CB44D21004978FC /* HabitCompletion+CoreDataClass.swift */; };
+		6B4EAE7E2CB44ED2004978FC /* Habit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4EAE7C2CB44ED2004978FC /* Habit+CoreDataProperties.swift */; };
+		6B4EAE7F2CB44ED2004978FC /* HabitCompletion+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4EAE7D2CB44ED2004978FC /* HabitCompletion+CoreDataProperties.swift */; };
 		6B9218062C8CECF7001568CF /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9218052C8CECF7001568CF /* Persistance.swift */; };
 		6B9218082C8CEFF0001568CF /* NewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9218072C8CEFF0001568CF /* NewHabitView.swift */; };
 		6B92180A2C8CFAE8001568CF /* HabitCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9218092C8CFAE8001568CF /* HabitCategory.swift */; };
@@ -70,6 +74,10 @@
 		6B0FB8BD2C8DB9FA006DC83B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		6B0FB8BF2C8E0D5A006DC83B /* Frequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
 		6B0FB8C12C8E0D8E006DC83B /* GoalPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPeriod.swift; sourceTree = "<group>"; };
+		6B4EAE762CB44D21004978FC /* HabitCompletion+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HabitCompletion+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6B4EAE772CB44D21004978FC /* HabitCompletion+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HabitCompletion+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6B4EAE7C2CB44ED2004978FC /* Habit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Habit+CoreDataProperties.swift"; path = "StreakZ/Models/Habit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6B4EAE7D2CB44ED2004978FC /* HabitCompletion+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "HabitCompletion+CoreDataProperties.swift"; path = "StreakZ/Models/HabitCompletion+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6B9218052C8CECF7001568CF /* Persistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		6B9218072C8CEFF0001568CF /* NewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitView.swift; sourceTree = "<group>"; };
 		6B9218092C8CFAE8001568CF /* HabitCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCategory.swift; sourceTree = "<group>"; };
@@ -103,6 +111,8 @@
 		6B082A702C7E2DA5000F50DC = {
 			isa = PBXGroup;
 			children = (
+				6B4EAE7C2CB44ED2004978FC /* Habit+CoreDataProperties.swift */,
+				6B4EAE7D2CB44ED2004978FC /* HabitCompletion+CoreDataProperties.swift */,
 				6B0FB8BD2C8DB9FA006DC83B /* Localizable.xcstrings */,
 				6B082A7B2C7E2DA5000F50DC /* StreakZ */,
 				6B082A8D2C7E2DA6000F50DC /* StreakZTests */,
@@ -168,6 +178,8 @@
 				6B082AA72C8A36DE000F50DC /* Habits.xcdatamodeld */,
 				6B9218092C8CFAE8001568CF /* HabitCategory.swift */,
 				6B0FB8A92C8D06D8006DC83B /* Habit+CoreDataClass.swift */,
+				6B4EAE762CB44D21004978FC /* HabitCompletion+CoreDataClass.swift */,
+				6B4EAE772CB44D21004978FC /* HabitCompletion+CoreDataProperties.swift */,
 				6B0FB8AA2C8D06D8006DC83B /* Habit+CoreDataProperties.swift */,
 				6B9218052C8CECF7001568CF /* Persistance.swift */,
 				6B0FB8BF2C8E0D5A006DC83B /* Frequency.swift */,
@@ -352,6 +364,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B4EAE792CB44D21004978FC /* HabitCompletion+CoreDataProperties.swift in Sources */,
+				6B4EAE7A2CB44D21004978FC /* HabitCompletion+CoreDataClass.swift in Sources */,
+				6B4EAE7E2CB44ED2004978FC /* Habit+CoreDataProperties.swift in Sources */,
+				6B4EAE7F2CB44ED2004978FC /* HabitCompletion+CoreDataProperties.swift in Sources */,
 				6B082A7F2C7E2DA5000F50DC /* ContentView.swift in Sources */,
 				6B0FB8B62C8D1443006DC83B /* HabitRow.swift in Sources */,
 				6B9218062C8CECF7001568CF /* Persistance.swift in Sources */,

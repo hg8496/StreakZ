@@ -7,7 +7,7 @@ import CoreData
 struct StreakZApp: App {
     let persistenceController = PersistenceController.shared
     @StateObject private var habitViewModel = HabitViewModel(context: PersistenceController.shared.container.viewContext)
-
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

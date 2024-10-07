@@ -4,7 +4,7 @@ import CoreData
 struct HabitRow: View {
     @ObservedObject var habit: Habit
     @EnvironmentObject var viewModel: HabitViewModel
-
+    
     var body: some View {
         HStack {
             Text(habit.name ?? "")
@@ -15,11 +15,9 @@ struct HabitRow: View {
                 .font(.body)
                 .foregroundColor(.green)
             Button(action: {
-                viewModel.toggleCompletion(for: habit)
+                viewModel.markHabitAsDone(for: habit)
             }) {
-                Image(systemName: habit.isCompleted ? "checkmark.square.fill" : "square")
-                    .foregroundColor(habit.isCompleted ? .green : .white)
-                    .font(.title2)
+                Image(systemName: "checkmark.square.fill")
             }
         }
         .padding(.vertical, 5)
@@ -37,7 +35,7 @@ struct HabitRow_Previews: PreviewProvider {
         habit.name = "Sample Habit"
         habit.streak = 5
         habit.isCompleted = false
-
+        
         return HabitRow(habit: habit)
             .environment(\.managedObjectContext, context)
             .environmentObject(HabitViewModel(context: context))

@@ -27,6 +27,11 @@ class HabitViewModel: ObservableObject {
         fetchHabits()
     }
     
+    func markHabitAsDone(for habit: Habit) {
+        habitService.markHabitAsDone(for: habit)
+        fetchHabits()
+    }
+    
     func updateGoalPeriod(for frequency: Frequency) -> GoalPeriod {
         switch frequency {
         case .daily:
